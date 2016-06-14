@@ -1,0 +1,29 @@
+<h4>Supporter</h4>
+<hr>
+<%= form_for @request do |f| %>
+  <div>
+    <%= f.label "Name *" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label "Email *" %>
+    <%= f.text_area :email %>
+  </div>
+  <div>
+    Deparment
+    <%= f.radio_button(:department, "Sales") %>
+    <%= f.label(:sales, "Sales") %>
+    <%= f.radio_button(:department, "Marketing") %>
+    <%= f.label(:marketing, "Marketing") %>
+    <%= f.radio_button(:department, "Technical") %>
+    <%= f.label(:marketing, "Technical") %>
+  </div>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+  <div>
+    <%= f.hidden_field :status, value: "Not Done" %>
+  </div>
+  <%= f.submit value="Save"%>
+<% end %>

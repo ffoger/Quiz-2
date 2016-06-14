@@ -1,0 +1,43 @@
+<h1>Support Requests</h1>
+
+<div class="Table">
+    <div class="Heading">
+        <div class="Cell">
+            <p>Name</p>
+        </div>
+        <div class="Cell">
+            <p>Email</p>
+        </div>
+        <div class="Cell">
+            <p>Deparment</p>
+        </div>
+        <div class="Cell">
+            <p>Message</p>
+        </div>
+        <div class="Cell">
+            <p>Actions</p>
+        </div>
+    </div>
+    <% @request.each do |request| %>
+    <div class="Row">
+        <div class="Cell">
+            <p><%= request.name %></p>
+        </div>
+        <div class="Cell">
+            <p><%= request.email %></p>
+        </div>
+        <div class="Cell">
+            <p><%= request.department %></p>
+        </div>
+        <div class="Cell">
+            <p><%= request.message %></p>
+        </div>
+        <div class="Cell">
+            <p><%= link_to "Edit", edit_request_path(request) %>
+               <%= link_to "Delete", request_path(request),
+                                    method: :delete,
+                                    data:   {confirm: "Are you sure?"} %></p>
+        </div>
+    </div>
+    <% end %>
+</div>
